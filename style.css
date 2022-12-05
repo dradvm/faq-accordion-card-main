@@ -1,0 +1,165 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --Verydarkdesaturatedblue: hsl(238, 29%, 16%);
+    --Softred: hsl(14, 88%, 65%);
+    --Softviolet: hsl(273, 75%, 66%);
+    --Softblue: hsl(240, 73%, 65%);
+    --Verydarkgrayishblue: hsl(237, 12%, 33%);
+    --Darkgrayishblue: hsl(240, 6%, 50%);
+    --Lightgrayishsblue: hsl(240, 5%, 91%);
+}
+.attribution {
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;font-size: 11px; 
+    text-align: center;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+button {
+    border: none;
+    padding: none;
+    background-color: transparent;
+}
+
+.faq {
+    display: flex;
+    position: fixed;
+    inset: 0 0 0 0;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(var(--Softviolet), var(--Softblue));
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+}
+.faq__container {
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    width: 60%;
+    height: 60%;
+}
+.faq__illu {
+    width: 40%;
+    background: url("./images/bg-pattern-desktop.svg") center / cover no-repeat;
+    background-position: 100% 65%;
+    background-size: 250%;
+}
+.faq__img--desktop {
+    height: 100%;
+    background-image: url("./images/illustration-woman-online-desktop.svg");
+    background-size: 115%;
+    background-position: 110% center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.faq__img--mobile {
+    display: none;
+}
+.faq__box {
+    position: absolute;
+    top: 43%;
+    left: -32%;
+    width: 50%;
+}
+.faq__content {
+    width: 60%;
+    padding: 64px 80px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.faq__logo {
+    font-size: 2rem;
+    color: var(--Verydarkdesaturatedblue);
+}
+.faq__body {
+    margin-top: 5%;
+}
+.faq__item {
+    padding: 16px 0px;
+    border-bottom: thin solid var(--Lightgrayishsblue);
+    cursor: pointer;
+    overflow: hidden;
+}
+.faq__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--Verydarkgrayishblue);
+}
+.faq__title img {
+    margin-top: 1px;
+}
+.faq__discriptions {
+    display: none;
+    padding-top: 5%;
+    transition: .3s linear;
+}
+
+.faq__item:hover .faq__title{
+    color: var(--Softred);
+    transition: .3s;
+}
+.active .faq__discriptions{
+    display: block;
+    color: var(--Darkgrayishblue);
+}
+.active .faq__title {
+    font-weight: 700;
+    font-size: 1.1em;
+    transform: .3s linear;
+}
+.active .faq__title>img {
+    rotate: 180deg;
+    transition: .3s;
+}
+@media (max-width: 740px) {
+    .faq__img--desktop {
+        display: none;
+    }
+    .faq__img--mobile {
+        display: initial;
+    }
+    .faq {
+        position: initial;
+        padding-top: 50%;
+        padding-bottom: 20%;
+    }
+    .faq__container {
+        width: 90%;
+        height: 90%;
+        flex-direction: column;
+    }
+    .faq__illu, .faq__content {
+        width: 100%;
+    }
+    .faq__illu {
+        background-image: url("./images/bg-pattern-mobile.svg");
+        height: 140px;
+        background-size: 80%;
+        display: flex;
+        justify-content: center;
+        background-position: top;
+    }
+    .faq__img--mobile {
+        width: 100%;
+        position: relative;
+        height: 200px;
+        top: -85%;
+    }
+    .faq__content {
+        padding: 48px 32px;
+    }
+    .faq__logo {
+        text-align: center;
+    }
+}
